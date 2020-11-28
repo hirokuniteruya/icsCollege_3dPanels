@@ -2,6 +2,11 @@
       background: #EAE6DD;
     }
 
+    a {
+      color: gray;
+      text-decoration: none;
+    }
+
     /* 全てのパネルを包含するdiv.wrapper要素 */
     .wrapper {
       margin: 300px auto;
