@@ -1,0 +1,66 @@
+    .body {
+      background: #EAE6DD;
+    }
+
+    /* 全てのパネルを包含するdiv.wrapper要素 */
+    .wrapper {
+      margin: 300px auto;
+      width: 500px;
+      height: 100px;
+      position: relative;
+      transform-style: preserve-3d; /* これを指定する事で、子要素が3D空間に配置される様になる */
+      transform: rotateX(-45deg) rotateY(-45deg); /* 斜め上から見た感じになる様に全体を回転させる */
+      transform-origin: left bottom 0; /* transformプロパティでの変形（回転）の基点がdiv.wrapperの左下になる */
+    }
+
+    .panel {
+      height: 100px;
+      width: 100px;
+      background: black;
+      color: white;
+      font-size: 3em;
+      text-align: center;
+      line-height: 100px;
+      /* パネルにposition: absolute;を指定することで、
+       * position:relative;を指定した親要素（div.wrapper）の位置を基準とした位置を指定できる様になる */
+      position: absolute;
+      transform-origin: left bottom; /* 個々のパネルを回転させる際の基点を、パネルの左下に設定 */
+    }
+
+    .P {
+      /* translateプロパティで、3D空間ないの個々のパネルの位置を指定。
+       * 位置を移した後に回転。ちなみに回転を先にすると、描画される位置が変わる */
+      transform: translate3d(0px, -100px, 100px) rotateX(90deg);
+      background: hsl(230, 75%, 70%);
+      /* 個々のパネルのアニメーションの開始位置をleftやtopで指定。
+       * 後ほどjQueryでleftやtopの値を0にします。 */
+      left: 500px;
+    }
+
+    .E {
+      transform: translate3d(0px, 0px, 100px);
+      background: hsl(230, 75%, 30%);
+      /* 開始位置 */
+      left: -500px;
+    }
+
+    .S {
+      transform: translate3d(100px, 0px, 100px) rotateY(90deg);
+      background: hsl(230, 75%, 50%);
+      /* 開始位置 */
+      top: -500px;
+    }
+
+    .n20 {
+      transform: translate3d(100px, -100px, 0);
+      background: hsl(190, 75%, 25%);
+      /* 開始位置 */
+      left: -500px;
+    }
+
+    .n21 {
+      transform: translate3d(200px, 0px, 0) rotateY(90deg);
+      background: hsl(190, 75%, 35%);
+      /* 開始位置 */
+      top: 500px;
+    }
