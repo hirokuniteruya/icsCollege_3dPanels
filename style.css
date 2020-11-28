@@ -32,7 +32,8 @@
        * 位置を移した後に回転。ちなみに回転を先にすると、描画される位置が変わる */
       transform: translate3d(0px, -100px, 100px) rotateX(90deg);
       background: hsl(230, 75%, 70%);
-      /* 個々のパネルのアニメーションの開始位置をleftやtopで指定。
+      /* アニメーションの開始位置(leftやtopで指定)
+       * ここでアニメーションの開始位置を指定します。
        * 後ほどjQueryでleftやtopの値を0にします。 */
       left: 500px;
     }
@@ -64,3 +65,49 @@
       /* 開始位置 */
       top: 500px;
     }
+
+    /********** 以下、補助軸とコントロールパネルのCSS **********/
+    .axisHelper {
+      width: 1000px;
+      border: 1px solid red;
+      position: absolute;
+      left: 0;
+      top: 100px;
+      transform-origin: left;
+    }
+
+    .axisHelper-y {
+      transform: rotateZ(-90deg);
+      border-color: green;
+    }
+
+    .axisHelper-z {
+      transform: rotateY(-90deg);
+      border-color: blue;
+    }
+
+    #rotManager {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 240px;
+      padding: 10px 20px;
+      border-bottom-right-radius: 5px;
+      background: rgba(0, 0, 0, .12);
+      line-height: 30px;
+    }
+
+    #replay {
+      background: lightcoral;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      padding: 3px 10px;
+      cursor: pointer;
+    }
+
+    #replay:focus {
+      outline: none;
+    }
+
+    /* コンパネのCSSここまで */
