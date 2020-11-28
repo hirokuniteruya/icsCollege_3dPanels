@@ -5,7 +5,7 @@
     /* 全てのパネルを包含するdiv.wrapper要素 */
     .wrapper {
       margin: 300px auto;
-      width: 500px;
+      width: 0;
       height: 100px;
       position: relative;
       transform-style: preserve-3d; /* これを指定する事で、子要素が3D空間に配置される様になる */
